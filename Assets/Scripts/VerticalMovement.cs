@@ -6,13 +6,14 @@ public class VerticalMovement : MonoBehaviour
 {
     private const int speed = 15;
     public string axis = "Vertical";
+    [SerializeField] Rigidbody2D racketRigidbody;
 
     void FixedUpdate()
     {
         if(GameManager.sharedInstance.gameStarted == true)
         {
             float v = Input.GetAxisRaw(axis);
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, v * speed);
+            racketRigidbody.velocity = new Vector2(0, v * speed);
         }
     }
 }
