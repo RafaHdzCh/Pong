@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance = null;
     public bool gameStarted = false;
 
-    [SerializeField] GameObject logo;
-    [SerializeField] GameObject playButton;
-    [SerializeField] GameObject background;
+    [SerializeField] GameObject mainMenu;
 
     private void Awake()
     {
@@ -32,8 +30,6 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
-        logo.SetActive(false);
-        playButton.SetActive(false);
-        background.SetActive(false);
+        mainMenu.SetActive(false);
     }
 }
