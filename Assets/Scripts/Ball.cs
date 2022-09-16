@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    private const int ballSpeed = 30;
+    public int ballSpeed = 30;
     private bool hasTheBallMoved = false;
     [SerializeField] Rigidbody2D ballRigidbody2D;
 

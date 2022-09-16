@@ -19,9 +19,9 @@ public class GoalZone : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Ball"))
         {
-            Debug.Log("GOL");
             score++;
             scoreText.text = score.ToString();
+            GameManager.sharedInstance.GoalScored();
         }
     }
 }
