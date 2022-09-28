@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public int ballSpeed = 30;
+    [SerializeField] AudioSource hit;
+    public float ballSpeed = 30;
     private bool hasTheBallMoved = false;
     [SerializeField] Rigidbody2D ballRigidbody2D;
+
 
     private void Update()
     {
@@ -19,6 +21,8 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        hit.Play();
+        ballSpeed *= 1.008f;
         if (collision.gameObject.name == "LeftRacket")
         {
             float y = hitFactor(transform.position,
